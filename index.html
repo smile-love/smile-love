@@ -26,7 +26,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -390,8 +390,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -526,16 +525,19 @@ $(function () {
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="ES6">
                             
-                            <span class="card-title">Hello World</span>
+                            <span class="card-title">ES6</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                                let 和 constlet声明变量和作用域let不存在变量提升
+  for (var i = 0; i < 10; i++) {
+        setTimeout(function(){
+            console.log
                             
                         </div>
                         <div class="publish-info">
@@ -569,7 +571,8 @@ $(function () {
             Copyright&nbsp;&copy;
             <span id="year">年份</span>
             <a href="http://smile-love.github.io" target="_blank">ZF.Li</a>
-            
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             
@@ -578,13 +581,13 @@ $(function () {
             
             
             <span id="busuanzi_container_site_pv">
-                <i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
             </span>
             
             
             <span id="busuanzi_container_site_uv">
-                &nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
                     class="white-color"></span>&nbsp;人
             </span>
             
@@ -601,7 +604,7 @@ $(function () {
                     var years = days * 365;
                     var today = new Date();
                     var startYear = "2019";
-                    var startMonth = "6";
+                    var startMonth = "9";
                     var startDate = "28";
                     var startHour = "0";
                     var startMinute = "0";

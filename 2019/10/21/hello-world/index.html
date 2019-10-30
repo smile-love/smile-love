@@ -4,8 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, ZF.Li">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="ES6, ZF.Li">
+    <meta name="description" content="let 和 constlet声明变量和作用域let不存在变量提升
+  for (var i = 0; i &lt; 10; i++) {
+        setTimeout(function(){
+            console.log">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | ZF.Li</title>
+    <title>ES6 | ZF.Li</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -26,7 +29,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -304,13 +307,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        ES6
                     </div>
                 </div>
             </div>
@@ -437,6 +440,11 @@
                 </div>
                 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-10-30
+                </div>
+                
 
                 
 				
@@ -451,20 +459,147 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+                <h1 id="let-和-const"><a href="#let-和-const" class="headerlink" title="let 和 const"></a>let 和 const</h1><h2 id="let声明变量和作用域"><a href="#let声明变量和作用域" class="headerlink" title="let声明变量和作用域"></a>let声明变量和作用域</h2><h3 id="let不存在变量提升"><a href="#let不存在变量提升" class="headerlink" title="let不存在变量提升"></a>let不存在变量提升</h3><pre class=" language-JS"><code class="language-JS"><script>
+  for (var i = 0; i < 10; i++) {
+        setTimeout(function(){
+            console.log(i)  // 10次10
+        },1000)
+      }
+      for (let j = 0; j < 10; j++) {
+        setTimeout(function(){
+            console.log(j)  // 0,1,2,3,4,5,6,7,8,9
+        },1000)
+      }
+</script></code></pre>
+<h3 id="let-const"><a href="#let-const" class="headerlink" title="let/const"></a>let/const</h3><ul>
+<li>let/const声明的变量不能重新被定义 let可以重新赋值 const不可以赋值</li>
+<li>如果确定值不会改变  就使用const 如果确定改变的话就使用let<h1 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h1></li>
+</ul>
+<pre class=" language-JS"><code class="language-JS">var f = v => v;
+// 等同于
+var f = function (v){
+  return v
+}</code></pre>
+<h2 id="1-不带参数的写法"><a href="#1-不带参数的写法" class="headerlink" title="1.不带参数的写法"></a>1.不带参数的写法</h2><pre class=" language-JS"><code class="language-JS"><script>
+  var f = () =>{
+    return
+  } 
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+  var f = function(){
+    return
+  }
+</script></code></pre>
+<h2 id="2-带一个参数的写法"><a href="#2-带一个参数的写法" class="headerlink" title="2.带一个参数的写法"></a>2.带一个参数的写法</h2><pre class=" language-JS"><code class="language-JS"><script>
+  var f = a => {
+    console.log(a)
+  }
+  var f = function(a){
+    console.log(a)
+  }
+</script></code></pre>
+<h2 id="3-带多个参数的写法"><a href="#3-带多个参数的写法" class="headerlink" title="3.带多个参数的写法"></a>3.带多个参数的写法</h2><pre><code>&lt;script&gt;
+  var f = (a,b) =&gt; {
+    console.log(a+b)
+  }
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+  var f = funtion(a,b){
+    console.log(a+b)
+  }
+&lt;/script&gt;</code></pre><h2 id="4-return-多行写法"><a href="#4-return-多行写法" class="headerlink" title="4.return 多行写法"></a>4.return 多行写法</h2><pre><code>&lt;script&gt;
+  var age = a =&gt; a;
+  var age = function(a){
+    return a
+  }
+&lt;/script&gt;</code></pre><h2 id="5-this指向"><a href="#5-this指向" class="headerlink" title="5.this指向"></a>5.this指向</h2><ol>
+<li>箭头函数的this指向 settimeout会改变this的指向 如果我们用箭头函数 箭头函数就指向父级。<br>在setInterval和setTimeout中传入函数时，函数中的this会指向window对象。<br>箭头函数的this指向是父级 </li>
+</ol>
+<h2 id="6-字符串模板"><a href="#6-字符串模板" class="headerlink" title="6.字符串模板"></a>6.字符串模板</h2><p>传统字符串的缺点:</p>
+<ol>
+<li>传统的字符串拼接不能正常换行</li>
+<li>传统的字符串拼接不能友好的插入变量 ${}</li>
+<li>传统的字符串拼接不能友好的处理单引号、双引号互相嵌套的问题。<pre><code>// 插入变量
+var s1 = `hello vue`;
+var html = `xxx ${s1} xxx` </code></pre><h2 id="7-变量解构赋值-变量的取出"><a href="#7-变量解构赋值-变量的取出" class="headerlink" title="7.变量解构赋值  (变量的取出)"></a>7.变量解构赋值  (变量的取出)</h2><h3 id="1-数组的结构-与下标有关-对应不了-值为undefined"><a href="#1-数组的结构-与下标有关-对应不了-值为undefined" class="headerlink" title="1.数组的结构 (与下标有关,对应不了 值为undefined)"></a>1.数组的结构 (与下标有关,对应不了 值为undefined)</h3><pre><code>var arr = [1,2,3]
+[a,b,c] =arr;  1 2 3</code></pre><h3 id="2-对象结构-与下标无关"><a href="#2-对象结构-与下标无关" class="headerlink" title="2.对象结构 (与下标无关)"></a>2.对象结构 (与下标无关)</h3></li>
+</ol>
+<ul>
+<li>解构定义的变量与属性名称有关<pre><code>let { bar, foo } = { foo: &#39;aaa&#39;,bar:&#39;bbb&#39;} 
+foo: aaa
+bar: bbb</code></pre><h1 id="数组的扩展"><a href="#数组的扩展" class="headerlink" title="数组的扩展"></a>数组的扩展</h1><h2 id="1-spread"><a href="#1-spread" class="headerlink" title="1.spread"></a>1.spread</h2>将一个数组转为 用’逗号’分割的参数序列</li>
+</ul>
+<pre><code>// 常用 合并两个数组
+var arr = [1,2]
+var arrs = [3,4]
+var newArr = [...arr,...arrs]</code></pre><h2 id="2-Array-from"><a href="#2-Array-from" class="headerlink" title="2.Array.from"></a>2.Array.from</h2><p>Array.from方法用于将 “类对象” 转为真正的数组</p>
+<pre><code>var arr = Array.from(arguments)</code></pre><h2 id="3-find-findIndex"><a href="#3-find-findIndex" class="headerlink" title="3.find / findIndex"></a>3.find / findIndex</h2><ol>
+<li>find</li>
+</ol>
+<p>数组实例的find方法，用于找出第一个符合条件的数组成员。它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。如果没有符合条件的成员，则返回undefined。 find方法的回调函数可以接受三个参数，依次为当前的值、当前的位置和原数组。</p>
+<pre><code>var ele = [1,5,10,15].find(function(value,index,arr){
+  return value &gt; 9
+})
+console.log(ele)  // 10</code></pre><ol>
+<li>findIndex</li>
+</ol>
+<p>数组实例的findIndex方法的用法与find方法非常类似，返回第一个符合条件的数组成员的下标，如果所有成员都不符合条件，则返回-1。</p>
+<pre><code>[1,5,10,15].findIndex(function(value,index,arr){
+  return value &gt;9
+}) // 2</code></pre><h1 id="常用数组操作"><a href="#常用数组操作" class="headerlink" title="常用数组操作"></a>常用数组操作</h1><h2 id="map-filter-foreach-some-every-includs-find-findIndex-reduce"><a href="#map-filter-foreach-some-every-includs-find-findIndex-reduce" class="headerlink" title="map  filter  foreach  some  every  includs  find  findIndex  reduce"></a>map  filter  foreach  some  every  includs  find  findIndex  reduce</h2><h2 id="1-map"><a href="#1-map" class="headerlink" title="1.map"></a>1.map</h2><p>数组map()方法主要创建一个新的数组使用调用此数组中的每个元素上所提供的函数的结果。即对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。对数据进行操作 返回新的数据</p>
+<pre><code>var list = [1,2,3,4];   
+var newList = list.map(ele=&gt;{    // 不改变原数据
+  return ele*2   
+});
+console.log(list,newList)  // [1,2,3,4] [2,4,6,8]</code></pre><h2 id="2-filter-过滤"><a href="#2-filter-过滤" class="headerlink" title="2.filter  过滤"></a>2.filter  过滤</h2><p>创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。</p>
+<pre><code>var list = [1,2,3,4];   
+var newList = list.filter(ele=&gt;ele&gt;2);  // [3,4] 不改变原数组
+// 把符合条件的元素全部过滤出来 返回的数据结构是数组 不符合条件 返回的是空数组</code></pre><h2 id="3-foreach"><a href="#3-foreach" class="headerlink" title="3.foreach"></a>3.foreach</h2><ol>
+<li>对数据进行循环  相当于for循环  没有返回值</li>
+<li>不能对元素进行修改</li>
+<li>break 不能终止<pre><code>var arr = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]
+arr.forEach(function(ele){
+console.log(ele)    // &#39;a&#39; &#39;b&#39; &#39;c&#39;
+})</code></pre><h2 id="4-every-some"><a href="#4-every-some" class="headerlink" title="4.every / some"></a>4.every / some</h2><h3 id="every-全为true-返回true"><a href="#every-全为true-返回true" class="headerlink" title="every() 全为true 返回true"></a>every() 全为true 返回true</h3>是对数组中每一项运行给定函数，如果该函数对每一项返回true,则返回true。</li>
+</ol>
+<pre><code>var arr = [1,2,3,4,5,6]
+console.log( arr.every ( function( item, index, array ){
+  return item &gt; 3 
+}));  // false</code></pre><h3 id="some-任一项为true-返回true"><a href="#some-任一项为true-返回true" class="headerlink" title="some() 任一项为true 返回true"></a>some() 任一项为true 返回true</h3><p>是对数组中每一项运行给定函数，如果该函数对任一项返回true，则返回true。</p>
+<pre><code>var arr = [1,2,3,4,5,6]
+console.log( arr.some ( function( item, index, array ){
+  return item &gt; 3 
+}));  // true</code></pre><h2 id="5-includes"><a href="#5-includes" class="headerlink" title="5.includes"></a>5.includes</h2><p>用来判断一个数组是否包含一个指定的值，如果是返回 true，否则false。</p>
+<pre><code>[1, 2, NaN].includes(NaN); // true
+[1, 2, 3].includes(4);     // false</code></pre><h2 id="6-reduce"><a href="#6-reduce" class="headerlink" title="6.reduce"></a>6.reduce</h2><p>reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。</p>
+<pre><code>var arr = [1,2,3,4];
+// 对total赋予一个初值 current从第一项开始
+var total = arr.reduce((total,current)=&gt;{
+  return total + current;
+  // total 求和的结果 current 当前循环的数据
+},0)</code></pre><h1 id="Set-Map-数据结构"><a href="#Set-Map-数据结构" class="headerlink" title="Set / Map 数据结构"></a>Set / Map 数据结构</h1><h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>它类似于数组，但是成员的值都是唯一的，没有重复的值。</p>
+<p>Set 本身是一个构造函数，用来生成 Set 数据结构。</p>
+<ol>
+<li>set.add()  向set结构添加数据</li>
+<li>set.size()  代表set结构的大小  理解为数组的length</li>
+<li>set.delete()  向set数据结构珊瑚数据</li>
+<li>set.clear() 清空set数据结构内容<pre><code>// 数组去重
+var set = new Set();
+var arr = [0,1,2,2,4,4];
+for(var i = 0; i&lt; arr.length ; i++){
+set.add(arr[i])
+}
+var newArr = Arrar.from(set);
+console.log(newArr) // 0,1,2,4  
+</code></pre></li>
+</ol>
+<pre><code>## Map
+它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。如果你需要“键值对”的数据结构，Map 比 Object 更合适。
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+1. map.size()   返回结构的成员总数
+2. map.set()    向map结构添加属性或方法  
+3. map.get()    获取map结构的数据 
+4. map.has()   判断map数据结构是否包含某个属性或者方法 返回布尔值 true具有 false没有
+5. map.delete(key) 删除map结构里面的数某个键 返回true  失败返回false
+6. map.clear()  清除所有成员</code></pre>
             </div>
             <hr/>
 
@@ -700,15 +835,18 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="ES6">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">ES6</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            let 和 constlet声明变量和作用域let不存在变量提升
+  for (var i = 0; i < 10; i++) {
+        setTimeout(function(){
+            console.log
                         
                     </div>
                     <div class="publish-info">
@@ -738,15 +876,18 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="ES6">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">ES6</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            let 和 constlet声明变量和作用域let不存在变量提升
+  for (var i = 0; i < 10; i++) {
+        setTimeout(function(){
+            console.log
                         
                     </div>
                     <div class="publish-info">
@@ -937,7 +1078,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                     var years = days * 365;
                     var today = new Date();
                     var startYear = "2019";
-                    var startMonth = "6";
+                    var startMonth = "9";
                     var startDate = "28";
                     var startHour = "0";
                     var startMinute = "0";
