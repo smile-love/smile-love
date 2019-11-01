@@ -463,45 +463,42 @@ let 和">
             <div id="articleContent">
                 <p>ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。</p>
 <h2 id="let-和-const"><a href="#let-和-const" class="headerlink" title="let 和 const"></a>let 和 const</h2><h3 id="let声明变量和作用域"><a href="#let声明变量和作用域" class="headerlink" title="let声明变量和作用域"></a>let声明变量和作用域</h3><p>let不存在变量提升</p>
-<pre class=" language-JS"><code class="language-JS"><script>
-  for (var i = 0; i < 10; i++) {
+<pre><code>&lt;script&gt;
+  for (var i = 0; i &lt; 10; i++) {
         setTimeout(function(){
             console.log(i)  // 10次10
         },1000)
       }
-      for (let j = 0; j < 10; j++) {
+      for (let j = 0; j &lt; 10; j++) {
         setTimeout(function(){
             console.log(j)  // 0,1,2,3,4,5,6,7,8,9
         },1000)
       }
-</script></code></pre>
-<h3 id="let-const"><a href="#let-const" class="headerlink" title="let/const"></a>let/const</h3><ul>
+&lt;/script&gt;
+</code></pre><h3 id="let-const"><a href="#let-const" class="headerlink" title="let/const"></a>let/const</h3><ul>
 <li>let/const声明的变量不能重新被定义 let可以重新赋值 const不可以赋值</li>
 <li>如果确定值不会改变  就使用const 如果确定改变的话就使用let<h1 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h1></li>
 </ul>
-<pre class=" language-JS"><code class="language-JS">var f = v => v;
+<pre><code>var f = v =&gt; v;
 // 等同于
 var f = function (v){
   return v
-}</code></pre>
-<h2 id="1-不带参数的写法"><a href="#1-不带参数的写法" class="headerlink" title="1.不带参数的写法"></a>1.不带参数的写法</h2><pre class=" language-JS"><code class="language-JS"><script>
-  var f = () =>{
+}</code></pre><h2 id="1-不带参数的写法"><a href="#1-不带参数的写法" class="headerlink" title="1.不带参数的写法"></a>1.不带参数的写法</h2><pre><code>&lt;script&gt;
+  var f = () =&gt;{
     return
   } 
 
   var f = function(){
     return
   }
-</script></code></pre>
-<h2 id="2-带一个参数的写法"><a href="#2-带一个参数的写法" class="headerlink" title="2.带一个参数的写法"></a>2.带一个参数的写法</h2><pre class=" language-JS"><code class="language-JS"><script>
-  var f = a => {
+&lt;/script&gt;</code></pre><h2 id="2-带一个参数的写法"><a href="#2-带一个参数的写法" class="headerlink" title="2.带一个参数的写法"></a>2.带一个参数的写法</h2><pre><code>&lt;script&gt;
+  var f = a =&gt; {
     console.log(a)
   }
   var f = function(a){
     console.log(a)
   }
-</script></code></pre>
-<h2 id="3-带多个参数的写法"><a href="#3-带多个参数的写法" class="headerlink" title="3.带多个参数的写法"></a>3.带多个参数的写法</h2><pre><code>&lt;script&gt;
+&lt;/script&gt;</code></pre><h2 id="3-带多个参数的写法"><a href="#3-带多个参数的写法" class="headerlink" title="3.带多个参数的写法"></a>3.带多个参数的写法</h2><pre><code>&lt;script&gt;
   var f = (a,b) =&gt; {
     console.log(a+b)
   }
